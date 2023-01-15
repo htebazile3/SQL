@@ -1,0 +1,41 @@
+ /** Jewelry
+ bracelets (1)
+ necklaces (2)
+ earrings (3)
+ anklets (4)
+ toe rings (5)
+ bangles (6)
+ choker (7)
+ tiara (8)
+ belly chain (9)
+ brooch (10)
+ class ring (11)
+ pendants (12)
+ belly ring (13)
+ enagement ring (14)
+ championship ring (15)
+ **/
+ 
+CREATE TABLE jewelry (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, price INTEGER);
+
+INSERT into jewelry VALUES (1, "bracelets", 6, 12);
+INSERT into jewelry VALUES (2, "necklaces", 4, 10); 
+INSERT into jewelry VALUES (3, "earrings", 5, 6);
+INSERT into jewelry VALUES (4, "anklets", 7, 8);
+INSERT into jewelry VALUES (5, "toe rings", 4, 5);
+INSERT into jewelry VALUES (6, "bangles", 4, 12);
+INSERT into jewelry VALUES (7, "choker", 4, 9);
+INSERT into jewelry VALUES (8, "tiara", 2, 14);
+INSERT into jewelry VALUES (9, "belly chain", 2, 13);
+INSERT into jewelry VALUES (10, "brooch", 6, 3);
+INSERT into jewelry VALUES (11, "class ring", 8, 30);
+INSERT into jewelry VALUES (12, "pendants", 2, 8);
+INSERT into jewelry VALUES (13, "belly ring", 4, 9);
+INSERT into jewelry VALUES (14, "engagement ring", 2, 30);
+INSERT into jewelry VALUES (15, "championship ring", 3, 30);
+
+--database in order by price
+SELECT * FROM jewelry order by price;
+
+--what is the sum of items that equal the same price?
+SELECT price, sum(quantity) from jewelry group by price;
